@@ -1,0 +1,21 @@
+<div class = "place">
+<% @blogs.each do |blog| %>
+<div class="box7">
+<div class ="title"><%= blog.title %></div>
+<div class ="name">name : <%= blog.user.name %></div> 
+<div class = "text"><%= blog.text %></div>
+<div class = "date"><%= blog.updated_at %></div>
+
+<% if user_signed_in?%>
+<div class = "change1">
+<%= link_to "編集","/blogs/#{blog.id}/edit", method: :get %>
+</div>
+
+
+<div class = "change2">
+<%= link_to "削除", "/blogs/#{blog.id}", method: :delete %>
+</div>
+<%end%>
+</div>
+<%end%>
+</div>

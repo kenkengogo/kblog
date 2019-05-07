@@ -1,0 +1,31 @@
+<%# <div class = "box20">
+<h2>My colection</h2>
+<a class = "collection">● self</a>
+</div> %>
+
+
+
+<div class = "position">
+<%@blogs.each do |blog| %>
+<div class = "fukidashi">
+<div class="box7">
+<div class ="title"><%= blog.title %></div>
+<div class ="name">NAME: <%= blog.user.name %></div>
+<div class = "text"><%= blog.text %></div>
+<div class = "date"><%= blog.updated_at %></div>
+
+<div class = "change1">
+<%= link_to "編集","/blogs/#{@blogs.id}/edit", method: :get %>
+</div>
+
+
+<div class = "change2">
+<%= link_to "削除", "/blogs/#{@blogs.id}", method: :delete %>
+</div>
+
+</div>
+<%end%>
+</div>
+
+<%# <%= paginate(@users)%>
+
